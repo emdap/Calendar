@@ -1,0 +1,12 @@
+PORT=54746
+FLAGS = -DLOGFILE=${LOGFILE} -Wall -g 
+
+all : calserver
+
+calserver : lists.c calendar.c calserver.c
+	gcc ${FLAGS} -o calserver lists.c calendar.c calserver.c
+
+clean : 
+	rm *.o
+	rm calserver
+	rm -r *.dSYM
